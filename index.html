@@ -394,6 +394,147 @@ body.menu-open{overflow:hidden}
 
 @media (max-width:600px){section{padding:100px 16px}#hero{padding-left:16px;padding-right:16px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.name .ch{transform:none}.big-text .w{opacity:1}}
+
+/* ---------- projects ---------- */
+#projects{background:linear-gradient(180deg,transparent,var(--bg2) 25%,var(--bg2) 75%,transparent)}
+.pj-intro{max-width:620px;font-size:18px;line-height:1.6;color:var(--ink-soft);margin:-30px 0 34px}
+.pj-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.pj-filter button{font:500 14px var(--body);padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.6);color:var(--ink);cursor:pointer;transition:all .25s}
+.pj-filter button:hover{border-color:var(--pink);color:var(--pink)}
+.pj-filter button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pj-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.pj{grid-column:span 6;display:flex;flex-direction:column;gap:22px;padding:22px;transition:transform .15s ease-out,box-shadow .4s,opacity .4s}
+.pj.wide{grid-column:span 12;display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:34px}
+.pj.hide{display:none}
+.pj-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.pj-meta span+span::before{content:"✦";margin-right:8px;color:var(--rose)}
+.pj h3{font-family:var(--display);font-size:clamp(24px,2.4vw,34px);line-height:1.05;letter-spacing:-.03em;margin:10px 0 12px}
+.pj p{font-size:15.5px;line-height:1.6;color:var(--ink-soft)}
+.pj ul{list-style:none;margin:14px 0 0;display:grid;gap:7px;font-size:14.5px;color:var(--ink-soft)}
+.pj ul li::before{content:"✦ ";color:var(--pink)}
+.pj .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pj .tags span{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:12.5px;font-weight:500;background:rgba(255,255,255,.6)}
+
+/* screen frame */
+.screen{position:relative;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(59,11,40,.1);box-shadow:0 30px 60px -30px rgba(120,20,80,.45);cursor:zoom-in;font-family:var(--body);color:#2a0a1d;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.screen:hover{transform:translateY(-6px)}
+.screen .bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;background:#fbeef4;border-bottom:1px solid rgba(59,11,40,.08)}
+.screen .bar i{width:9px;height:9px;border-radius:50%;background:#ff8fb9}
+.screen .bar i:nth-child(2){background:#ffc2a8}.screen .bar i:nth-child(3){background:#c78bff}
+.screen .bar b{flex:1;margin:0 30px;height:16px;border-radius:6px;background:#fff;font:500 9.5px/16px var(--body);color:#9a6b85;text-align:center;overflow:hidden;white-space:nowrap}
+.screen .view{position:relative;aspect-ratio:16/10;overflow:hidden}
+.screen .stage{position:absolute;left:0;top:0;width:560px;height:350px;transform-origin:0 0;font-size:11px}
+.screen .stage>*{height:100%}
+.screen .zoom{position:absolute;right:10px;bottom:10px;z-index:3;padding:5px 10px;border-radius:999px;background:rgba(29,6,20,.75);color:#fff;font-size:10.5px;opacity:0;transition:opacity .3s}
+.screen:hover .zoom{opacity:1}
+.mock-note{position:absolute;left:10px;bottom:10px;z-index:3;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.85);color:#9a6b85;font-size:9.5px;letter-spacing:.06em}
+
+/* 1 — chat assistant */
+.m-chat{display:grid;grid-template-columns:28% 1fr;height:100%}
+.m-chat aside{background:#1d0614;color:#f6d9e7;padding:12px 10px;display:flex;flex-direction:column;gap:7px}
+.m-chat aside .brand{font:800 12px var(--display);color:#fff;margin-bottom:6px}
+.m-chat aside .brand em{font-style:normal;color:var(--pink2)}
+.m-chat aside div.h{padding:6px 8px;border-radius:8px;font-size:9.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-chat aside div.h.on{background:rgba(255,45,135,.25);opacity:1}
+.m-chat main{display:flex;flex-direction:column;padding:12px 14px;gap:9px;background:linear-gradient(180deg,#fff,#fff6fa)}
+.bub{max-width:82%;padding:8px 11px;border-radius:13px;line-height:1.45;font-size:10.5px}
+.bub.u{align-self:flex-end;background:var(--pink);color:#fff;border-bottom-right-radius:4px}
+.bub.a{align-self:flex-start;background:#fff;border:1px solid #f3d6e4;border-bottom-left-radius:4px;box-shadow:0 6px 14px -10px rgba(120,20,80,.4)}
+.bub.a table{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:9.5px}
+.bub.a td,.bub.a th{padding:3px 5px;border-bottom:1px solid #f6e3ec;text-align:left}
+.bub.a th{color:#9a6b85;font-weight:500}
+.bar-in{display:inline-block;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--pink),var(--lilac));vertical-align:middle}
+.src{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap}
+.src span{font-size:8.5px;padding:2px 7px;border-radius:999px;background:#fbeef4;color:#a0346c}
+.m-chat .input{margin-top:auto;display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:11px;border:1px solid #f0d3e1;background:#fff;color:#b58aa1;font-size:10px}
+.m-chat .input b{margin-left:auto;width:20px;height:20px;border-radius:7px;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:10px}
+.typing i{display:inline-block;width:5px;height:5px;margin-right:3px;border-radius:50%;background:var(--pink2);animation:tdot 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes tdot{0%,60%,100%{transform:none;opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+
+/* 2 — agent flow */
+.m-flow{height:100%;display:grid;grid-template-columns:1fr 34%;background:radial-gradient(#ead2de 1px,transparent 1px) 0 0/14px 14px,#fdf7fa}
+.m-flow .canvas{position:relative;padding:14px}
+.m-flow .ttl{font:700 11px var(--display);margin-bottom:10px}
+.m-flow .ttl small{font:500 9px var(--body);color:#9a6b85;margin-left:6px}
+.node{position:relative;width:78%;margin:0 auto 16px;padding:7px 10px;border-radius:10px;background:#fff;border:1px solid #efd2e0;box-shadow:0 6px 14px -10px rgba(120,20,80,.5);font-size:9.5px}
+.node b{display:block;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-bottom:2px}
+.node.t{border-left:3px solid var(--pink)}.node.q{border-left:3px solid var(--lilac)}.node.ac{border-left:3px solid #ff9a6b}.node.g{border-left:3px solid #2fbf8f}
+.node:not(:last-child)::after{content:"";position:absolute;left:50%;bottom:-17px;width:1.5px;height:16px;background:#d9a9c1}
+.m-flow .test{background:#fff;border-left:1px solid #f0d8e4;padding:10px;display:flex;flex-direction:column;gap:7px}
+.m-flow .test h5{font:700 10px var(--display)}
+.m-flow .test .bub{max-width:95%;font-size:9.5px}
+
+/* 3 — dashboard */
+.m-dash{height:100%;display:grid;grid-template-columns:14% 1fr;background:#fbf6f9}
+.m-dash .sn{background:#2a0a1d;display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:12px}
+.m-dash .sn i{width:18px;height:18px;border-radius:6px;background:rgba(255,255,255,.14)}
+.m-dash .sn i.on{background:var(--pink)}
+.m-dash .body{padding:11px 13px;display:grid;grid-template-rows:auto auto 1fr;gap:9px;min-width:0}
+.m-dash .hd{display:flex;align-items:center;justify-content:space-between;font:700 11.5px var(--display)}
+.m-dash .hd span{font:500 9px var(--body);padding:3px 8px;border-radius:999px;background:#fff;border:1px solid #f0d8e4;color:#9a6b85}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.kpi{background:#fff;border-radius:9px;padding:7px 8px;border:1px solid #f3e1ea}
+.kpi small{display:block;font-size:8.5px;color:#9a6b85}
+.kpi b{font:800 14px var(--display)}
+.kpi em{font-style:normal;font-size:8.5px;color:#1aa37a;margin-left:3px}
+.kpi em.dn{color:#e0457b}
+.charts{display:grid;grid-template-columns:1.6fr 1fr;gap:7px;min-height:0}
+.chart{background:#fff;border-radius:9px;border:1px solid #f3e1ea;padding:7px 8px;display:flex;flex-direction:column;min-height:0}
+.chart small{font-size:8.5px;color:#9a6b85;margin-bottom:3px}
+.chart svg{flex:1;width:100%;min-height:0}
+.draw{stroke-dasharray:600;stroke-dashoffset:600}
+.in .draw{animation:draw 2.2s .3s cubic-bezier(.4,.1,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.grow{transform-origin:bottom;transform:scaleY(0);transform-box:fill-box}
+.in .grow{animation:grow .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes grow{to{transform:scaleY(1)}}
+
+/* 4 — architecture */
+.m-arch{height:100%;padding:12px;background:linear-gradient(135deg,#1d0614,#3b0b28);color:#f6d9e7;display:flex;flex-direction:column}
+.m-arch .ttl{font:700 11px var(--display);color:#fff;margin-bottom:8px;display:flex;justify-content:space-between}
+.m-arch .ttl small{font:500 9px var(--body);color:var(--rose)}
+.m-arch svg{flex:1;width:100%}
+.m-arch .flowline{stroke-dasharray:4 4;animation:dash 1.2s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-16}}
+
+/* 5 — workshop slide */
+.m-slide{height:100%;display:grid;grid-template-columns:1.1fr 1fr;background:linear-gradient(135deg,#ff2d87,#c78bff);color:#fff;padding:18px;gap:14px;align-items:center}
+.m-slide .k{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.m-slide h4{font:800 22px/1 var(--display);letter-spacing:-.03em;margin:8px 0}
+.m-slide h4 em{font:italic 400 24px var(--serif)}
+.m-slide p{font-size:10px;opacity:.9;line-height:1.5}
+.m-slide .steps{display:grid;gap:7px}
+.m-slide .step{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:11px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);font-size:10px}
+.m-slide .step b{width:20px;height:20px;border-radius:50%;background:#fff;color:var(--pink);display:grid;place-items:center;font:800 10px var(--display);flex:none}
+.m-slide .pg{position:absolute;right:14px;top:10px;font-size:9px;opacity:.8}
+
+/* 6 — website */
+.m-web{height:100%;background:#fff;display:flex;flex-direction:column}
+.m-web header{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid #f3e1ea;font-size:9.5px}
+.m-web header b{font:800 12px var(--display)}
+.m-web header .sn{display:flex;gap:10px;color:#9a6b85}
+.m-web .hero{flex:1;min-height:0;display:grid;grid-template-columns:1.2fr 1fr;gap:12px;padding:14px;align-items:center;background:linear-gradient(120deg,#fff6fa,#f3e8ff)}
+.m-web .hero h4{font:800 18px/1.05 var(--display);letter-spacing:-.03em}
+.m-web .hero p{font-size:9.5px;color:#7a3a5f;margin:6px 0 9px}
+.m-web .hero a{display:inline-block;padding:6px 11px;border-radius:999px;background:var(--ink);color:#fff;font-size:9.5px}
+.m-web .art{aspect-ratio:1;width:62%;justify-self:center;border-radius:18px;background:conic-gradient(from 200deg,var(--pink),var(--lilac),var(--peach),var(--pink));position:relative}
+.m-web .art::after{content:"</>";position:absolute;inset:22%;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 18px var(--display);color:var(--pink)}
+.m-web .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 14px 32px}
+.m-web .feats div{padding:7px;border-radius:9px;border:1px solid #f3e1ea;font-size:9px;color:#7a3a5f}
+.m-web .feats b{display:block;color:#2a0a1d;font-size:10px;margin-bottom:2px}
+
+/* lightbox */
+.pj-modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:4vw;background:rgba(29,6,20,.72);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s}
+.pj-modal.open{opacity:1;pointer-events:auto}
+.pj-modal .inner{width:min(1100px,100%);transform:scale(.92);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.pj-modal.open .inner{transform:none}
+.pj-modal .screen{cursor:default}
+.pj-modal .screen:hover{transform:none}
+.pj-modal .close{position:absolute;top:22px;right:26px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:20px;cursor:pointer}
+.pj-modal .cap{color:#fff;margin-top:16px;font-size:14px;opacity:.85}
+
+@media (max-width:900px){.pj,.pj.wide{grid-column:span 12;display:flex}}
 </style>
 </head>
 <body>
@@ -410,13 +551,13 @@ body.menu-open{overflow:hidden}
 <nav>
   <a href="#hero" class="logo">K<b>.</b>O<b>.</b></a>
   <div class="nav-links">
-    <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#toolbox">Toolbox</a><a href="#expertise">Expertise</a>
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#toolbox">Toolbox</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a>
   </div>
   <a href="#contact" class="pill">Let's talk <span>↗</span></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
 </nav>
 <div class="mnav" id="mnav" aria-hidden="true">
-  <a href="#about"><i>01</i>About</a><a href="#experience"><i>02</i>Experience</a><a href="#education"><i>03</i>Education</a><a href="#toolbox"><i>04</i>Toolbox</a><a href="#expertise"><i>05</i>Expertise</a><a href="#contact"><i>06</i>Contact</a>
+  <a href="#about"><i>01</i>About</a><a href="#experience"><i>02</i>Experience</a><a href="#education"><i>03</i>Education</a><a href="#toolbox"><i>04</i>Toolbox</a><a href="#expertise"><i>05</i>Expertise</a><a href="#projects"><i>06</i>Projects</a><a href="#contact"><i>07</i>Contact</a>
   <div class="mnav-foot">Karineosman.51@gmail.com</div>
 </div>
 
@@ -580,6 +721,241 @@ body.menu-open{overflow:hidden}
       <div class="xp reveal" style="transition-delay:.3s"><span class="n">04</span><span class="ico">🌐</span><div><h3>Web<br>Designing</h3><p>Websites that look great and work everywhere — WordPress to hand-crafted code.</p></div></div>
     </div>
   </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow reveal">Selected work</span>
+    <h2 class="reveal">Things I've<br><em>built.</em></h2>
+    <p class="pj-intro reveal">A peek at the kind of work I ship: AI assistants, Copilot agents, data platforms and dashboards, from the first architecture sketch to the live demo.</p>
+    <div class="pj-filter reveal" role="tablist" aria-label="Filter projects">
+      <button class="on" data-f="all">All</button><button data-f="ai">AI &amp; Agents</button><button data-f="data">Data &amp; BI</button><button data-f="arch">Architecture</button><button data-f="design">Design &amp; Community</button>
+    </div>
+
+    <div class="pj-grid">
+
+      <!-- 1 -->
+      <article class="pj wide card tilt reveal" data-c="ai">
+        <div class="screen" data-cap="Enterprise data assistant: Azure OpenAI + RAG over company data">
+          <div class="bar"><i></i><i></i><i></i><b>assistant.internal / chat</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-chat">
+              <aside>
+                <div class="brand">Data<em>Assist</em> ✦</div>
+                <div class="h on">On-time rate by route</div>
+                <div class="h">Fleet fuel usage Q1</div>
+                <div class="h">Ridership trends 2023</div>
+                <div class="h">Maintenance backlog</div>
+                <div class="h">Driver shift coverage</div>
+              </aside>
+              <main>
+                <div class="bub u">Which routes had the best on-time rate last month?</div>
+                <div class="bub a">Here are the top 3 routes from the operations data:
+                  <table>
+                    <tr><th>Route</th><th>On-time</th><th></th></tr>
+                    <tr><td>Route 12</td><td>96.4%</td><td><span class="bar-in" style="width:58px"></span></td></tr>
+                    <tr><td>Route 7A</td><td>94.1%</td><td><span class="bar-in" style="width:50px"></span></td></tr>
+                    <tr><td>Route 3</td><td>91.8%</td><td><span class="bar-in" style="width:42px"></span></td></tr>
+                  </table>
+                  <div class="src"><span>📄 ops_report_feb.pdf</span><span>🗂 trips_table</span></div>
+                </div>
+                <div class="bub u">Why is Route 3 lower?</div>
+                <div class="bub a typing"><i></i><i></i><i></i></div>
+                <div class="input">Ask anything about your data… <b>↑</b></div>
+              </main>
+            </div>
+          </div><span class="mock-note">Illustrative · sample data</span><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+        <div>
+          <div class="pj-meta"><span>Mowasalat · Doha</span><span>2024</span></div>
+          <h3>Enterprise Data Assistant</h3>
+          <p>A web assistant that lets employees ask questions about the company's own data in plain language and get grounded answers, built on Azure OpenAI and other Azure services.</p>
+          <ul><li>Retrieval-augmented generation over documents &amp; tables</li><li>Answers with sources, so people can trust them</li><li>Clean chat UI anyone can use, no SQL needed</li></ul>
+          <div class="tags"><span>Azure OpenAI</span><span>RAG</span><span>Azure AI Search</span><span>Python</span><span>Web UI</span></div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="pj card tilt reveal" data-c="ai">
+        <div class="screen" data-cap="Copilot Studio agent: topics, actions and generative answers">
+          <div class="bar"><i></i><i></i><i></i><b>copilot studio / agents / hr-helper</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-flow">
+              <div class="canvas">
+                <div class="ttl">Topic · Leave request <small>Saved ✓</small></div>
+                <div class="node t"><b>Trigger</b>"I want to take a day off"</div>
+                <div class="node q"><b>Ask a question</b>Which dates? → <i>Date range</i></div>
+                <div class="node ac"><b>Action</b>Power Automate · check balance</div>
+                <div class="node g"><b>Generative answer</b>Grounded on HR policy docs</div>
+              </div>
+              <div class="test">
+                <h5>Test your agent</h5>
+                <div class="bub u">I want to take next Friday off</div>
+                <div class="bub a">Sure! You have <b>9 days</b> left. I've drafted the request for <b>Fri 27</b> ✓</div>
+                <div class="bub u">What's the policy on half days?</div>
+                <div class="bub a typing"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div><span class="mock-note">Illustrative</span><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+        <div>
+          <div class="pj-meta"><span>Netways</span><span>Product owner</span></div>
+          <h3>Copilot Studio Agents</h3>
+          <p>As product owner of Copilot Studio, I design and demo agents that connect to business systems, automate requests with Power Automate and answer from company knowledge.</p>
+          <div class="tags"><span>Copilot Studio</span><span>Power Automate</span><span>Generative AI</span></div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="pj card tilt reveal" data-c="data">
+        <div class="screen" data-cap="Executive Power BI dashboard on Microsoft Fabric">
+          <div class="bar"><i></i><i></i><i></i><b>power bi / executive overview</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-dash">
+              <div class="sn"><i class="on"></i><i></i><i></i><i></i></div>
+              <div class="body">
+                <div class="hd">Executive overview <span>Last 12 months ▾</span></div>
+                <div class="kpis">
+                  <div class="kpi"><small>Revenue</small><b>$4.2M</b><em>▲ 12%</em></div>
+                  <div class="kpi"><small>Customers</small><b>18.6K</b><em>▲ 8%</em></div>
+                  <div class="kpi"><small>Avg. ticket</small><b>$226</b><em>▲ 3%</em></div>
+                  <div class="kpi"><small>Churn</small><b>2.1%</b><em class="dn">▼ 0.4</em></div>
+                </div>
+                <div class="charts">
+                  <div class="chart"><small>Monthly revenue</small>
+                    <svg viewBox="0 0 220 90" preserveAspectRatio="none">
+                      <defs><linearGradient id="pjg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff2d87" stop-opacity=".35"/><stop offset="1" stop-color="#ff2d87" stop-opacity="0"/></linearGradient></defs>
+                      <g stroke="#f3e1ea"><line x1="0" x2="220" y1="22" y2="22"/><line x1="0" x2="220" y1="45" y2="45"/><line x1="0" x2="220" y1="68" y2="68"/></g>
+                      <path d="M0 70 L20 64 L40 66 L60 55 L80 58 L100 46 L120 50 L140 38 L160 34 L180 37 L200 22 L220 16 L220 90 L0 90Z" fill="url(#pjg)"/>
+                      <path class="draw" d="M0 70 L20 64 L40 66 L60 55 L80 58 L100 46 L120 50 L140 38 L160 34 L180 37 L200 22 L220 16" fill="none" stroke="#ff2d87" stroke-width="2.2" stroke-linejoin="round"/>
+                      <path class="draw" d="M0 76 L20 74 L40 70 L60 68 L80 66 L100 62 L120 60 L140 56 L160 52 L180 50 L200 46 L220 42" fill="none" stroke="#c78bff" stroke-width="1.6" stroke-dasharray="3 3"/>
+                    </svg></div>
+                  <div class="chart"><small>By region</small>
+                    <svg viewBox="0 0 120 90" preserveAspectRatio="none">
+                      <rect class="grow" x="8" y="20" width="18" height="62" rx="4" fill="#ff2d87"/>
+                      <rect class="grow" x="36" y="36" width="18" height="46" rx="4" fill="#ff6fb1" style="animation-delay:.1s"/>
+                      <rect class="grow" x="64" y="48" width="18" height="34" rx="4" fill="#c78bff" style="animation-delay:.2s"/>
+                      <rect class="grow" x="92" y="60" width="18" height="22" rx="4" fill="#ffc2a8" style="animation-delay:.3s"/>
+                      <line x1="0" x2="120" y1="82" y2="82" stroke="#f3e1ea"/>
+                    </svg></div>
+                </div>
+              </div>
+            </div>
+          </div><span class="mock-note">Illustrative · sample data</span><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+        <div>
+          <div class="pj-meta"><span>Netways</span><span>Data &amp; BI</span></div>
+          <h3>Executive Dashboards</h3>
+          <p>Power BI dashboards built on Microsoft Fabric that turn raw operational data into clear KPIs leadership can act on.</p>
+          <div class="tags"><span>Power BI</span><span>Microsoft Fabric</span><span>DAX</span><span>SQL</span></div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="pj wide card tilt reveal" data-c="arch">
+        <div>
+          <div class="pj-meta"><span>Netways</span><span>Solution architecture</span></div>
+          <h3>Fabric Lakehouse &amp; AI Reference Architecture</h3>
+          <p>End-to-end architectures I design for client proposals: ingesting data from on-prem and cloud sources into a Fabric lakehouse, modelling it, and putting Power BI and AI assistants on top.</p>
+          <ul><li>Medallion lakehouse (bronze → silver → gold) in OneLake</li><li>Semantic models feeding Power BI and Copilot</li><li>Technical &amp; financial proposals written alongside</li></ul>
+          <div class="tags"><span>Microsoft Fabric</span><span>Azure</span><span>OneLake</span><span>Azure OpenAI</span><span>On-prem gateway</span></div>
+        </div>
+        <div class="screen" data-cap="Reference architecture: sources → Fabric lakehouse → Power BI & AI">
+          <div class="bar"><i></i><i></i><i></i><b>architecture / fabric-ai-reference.drawio</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-arch">
+              <div class="ttl">Data &amp; AI platform: reference architecture <small>v2 · proposal</small></div>
+              <svg viewBox="0 0 540 290" font-family="DM Sans, sans-serif">
+                <defs><marker id="pja" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#ff6fb1"/></marker></defs>
+                <g font-size="10" fill="#f6d9e7">
+                  <text x="10" y="16" fill="#ffb3d1" font-size="9" letter-spacing="1.5">SOURCES</text>
+                  <rect x="4" y="26" width="128" height="40" rx="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,179,209,.4)"/><text x="14" y="50">🗄 ERP / SQL (on-prem)</text>
+                  <rect x="4" y="78" width="128" height="40" rx="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,179,209,.4)"/><text x="14" y="102">☁ SaaS &amp; APIs</text>
+                  <rect x="4" y="130" width="128" height="40" rx="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,179,209,.4)"/><text x="14" y="154">📄 Files &amp; docs</text>
+                  <rect x="4" y="182" width="128" height="40" rx="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,179,209,.4)"/><text x="14" y="206">📡 Streaming / IoT</text>
+
+                  <text x="150" y="16" fill="#ffb3d1" font-size="9" letter-spacing="1.5">MICROSOFT FABRIC · ONELAKE</text>
+                  <rect x="150" y="26" width="240" height="196" rx="14" fill="rgba(255,45,135,.08)" stroke="#ff2d87" stroke-dasharray="5 4"/>
+                  <rect x="164" y="40" width="212" height="30" rx="8" fill="rgba(255,255,255,.1)"/><text x="176" y="59">⚙ Pipelines &amp; Dataflows Gen2</text>
+                  <rect x="164" y="84" width="64" height="58" rx="8" fill="#a0522d" opacity=".55"/><text x="174" y="110" font-weight="700">Bronze</text><text x="174" y="126" font-size="8.5">raw</text>
+                  <rect x="238" y="84" width="64" height="58" rx="8" fill="#9aa4b1" opacity=".55"/><text x="248" y="110" font-weight="700">Silver</text><text x="248" y="126" font-size="8.5">cleaned</text>
+                  <rect x="312" y="84" width="64" height="58" rx="8" fill="#e0b84a" opacity=".6"/><text x="324" y="110" font-weight="700">Gold</text><text x="324" y="126" font-size="8.5">curated</text>
+                  <rect x="164" y="156" width="212" height="52" rx="8" fill="rgba(255,255,255,.1)"/><text x="176" y="178">◆ Semantic model</text><text x="176" y="196" font-size="8.5" fill="#ffb3d1">governed measures · row-level security</text>
+
+                  <text x="426" y="16" fill="#ffb3d1" font-size="9" letter-spacing="1.5">CONSUME</text>
+                  <rect x="426" y="26" width="104" height="54" rx="9" fill="#ff2d87"/><text x="438" y="50" fill="#fff" font-weight="700">📊 Power BI</text><text x="438" y="66" fill="#fff" font-size="8.5">dashboards</text>
+                  <rect x="426" y="96" width="104" height="54" rx="9" fill="#c78bff"/><text x="438" y="120" fill="#fff" font-weight="700">🤖 Copilot agent</text><text x="438" y="136" fill="#fff" font-size="8.5">Copilot Studio</text>
+                  <rect x="426" y="166" width="104" height="54" rx="9" fill="#ff6fb1"/><text x="438" y="190" fill="#fff" font-weight="700">✦ AI assistant</text><text x="438" y="206" fill="#fff" font-size="8.5">Azure OpenAI · RAG</text>
+
+                  <rect x="150" y="240" width="380" height="36" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(255,179,209,.3)"/><text x="164" y="262" font-size="9.5">🔐 Entra ID · Purview governance · Key Vault · monitoring</text>
+                </g>
+                <g stroke="#ff6fb1" stroke-width="1.5" fill="none" marker-end="url(#pja)">
+                  <path class="flowline" d="M132 46 H148"/><path class="flowline" d="M132 98 H148"/><path class="flowline" d="M132 150 H148"/><path class="flowline" d="M132 202 H148"/>
+                  <path class="flowline" d="M228 113 H236"/><path class="flowline" d="M302 113 H310"/><path class="flowline" d="M344 142 V154"/>
+                  <path class="flowline" d="M392 53 H424"/><path class="flowline" d="M392 123 H424"/><path class="flowline" d="M392 193 H424"/>
+                </g>
+              </svg>
+            </div>
+          </div><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="pj card tilt reveal" data-c="design">
+        <div class="screen" data-cap="AI 101 workshop for young people, Sawa youth association">
+          <div class="bar"><i></i><i></i><i></i><b>slides / ai-101-sawa</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-slide">
+              <span class="pg">04 / 18</span>
+              <div>
+                <div class="k">Sawa · AI workshop</div>
+                <h4>How does an AI <em>actually</em> answer you?</h4>
+                <p>No magic, just patterns learned from lots of examples. Let's break it down together.</p>
+              </div>
+              <div class="steps">
+                <div class="step"><b>1</b>You write a prompt</div>
+                <div class="step"><b>2</b>It becomes tokens &amp; numbers</div>
+                <div class="step"><b>3</b>The model predicts what comes next</div>
+                <div class="step"><b>4</b>You check it: AI can be wrong!</div>
+              </div>
+            </div>
+          </div><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+        <div>
+          <div class="pj-meta"><span>Sawa · Volunteer</span><span>Workshops</span></div>
+          <h3>AI Workshops for Youth</h3>
+          <p>Hands-on sessions that demystify AI for young people: what it is, how it works, and how to use it responsibly. Plus client workshops on Fabric, Azure and Copilot Studio.</p>
+          <div class="tags"><span>Teaching</span><span>Public speaking</span><span>Community</span></div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="pj card tilt reveal" data-c="design">
+        <div class="screen" data-cap="Website design: responsive landing page">
+          <div class="bar"><i></i><i></i><i></i><b>codendot.com</b></div>
+          <div class="view"><div class="stage">
+            <div class="m-web">
+              <header><b>Code<span style="color:var(--pink)">N</span>dot</b><div class="sn"><span>Services</span><span>Work</span><span>About</span><span>Contact</span></div></header>
+              <div class="hero">
+                <div><h4>Digital products that feel effortless.</h4><p>Design, development and everything in between, for brands that want to stand out.</p><a>Start a project →</a></div>
+                <div class="art"></div>
+              </div>
+              <div class="feats"><div><b>Web design</b>Responsive layouts</div><div><b>WordPress</b>Easy to manage</div><div><b>UI/UX</b>Figma prototypes</div></div>
+            </div>
+          </div><span class="mock-note">Illustrative</span><span class="zoom">⤢ Enlarge</span></div>
+        </div>
+        <div>
+          <div class="pj-meta"><span>CodeNdot</span><span>2021</span></div>
+          <h3>Web &amp; UI Design</h3>
+          <p>Designed a WordPress website from layout to launch, and I keep designing in Figma: clean flows, responsive layouts and small details that delight.</p>
+          <div class="tags"><span>WordPress</span><span>Figma</span><span>UI/UX</span><span>HTML/CSS</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <div class="pj-modal" id="pjModal" aria-hidden="true"><button class="close" aria-label="Close">✕</button><div class="inner"></div></div>
 </section>
 
 <!-- ============ LEADERSHIP ============ -->
@@ -891,7 +1267,7 @@ body.menu-open{overflow:hidden}
   /* ---- section focus: emphasize the section in view, fade the rest ---- */
   const secs = $$('body > section, .marquee-zone');
   const named = secs.filter(s => s.id);
-  const labels = { hero: 'Hello', about: 'About', experience: 'Experience', education: 'Education', toolbox: 'Toolbox', expertise: 'Expertise', leadership: 'People', languages: 'Languages', contact: 'Contact' };
+  const labels = { hero: 'Hello', about: 'About', experience: 'Experience', education: 'Education', toolbox: 'Toolbox', expertise: 'Expertise', projects: 'Projects', leadership: 'People', languages: 'Languages', contact: 'Contact' };
   const rail = $('#rail'), nowNum = $('#nowNum'), nowLbl = $('#nowLbl'), nowIn = $('#nowIn');
   named.forEach((s, i) => {
     s.classList.add('focusable');
@@ -974,6 +1350,44 @@ body.menu-open{overflow:hidden}
       toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1800);
     }).catch(() => { location.href = a.href; });
   }));
+})();
+
+/* ---- projects: scale mock screens, filter, lightbox ---- */
+(() => {
+  const sec = document.getElementById('projects');
+  if (!sec) return;
+  const fit = v => { const st = v.querySelector('.stage'); if (st) st.style.transform = 'scale(' + (v.clientWidth / 560) + ')'; };
+  const ro = new ResizeObserver(es => es.forEach(e => fit(e.target)));
+  const watch = root => root.querySelectorAll('.screen .view').forEach(v => { fit(v); ro.observe(v); });
+  watch(sec);
+
+  sec.querySelectorAll('.pj-filter button').forEach(b => b.addEventListener('click', () => {
+    sec.querySelectorAll('.pj-filter button').forEach(x => x.classList.toggle('on', x === b));
+    const f = b.dataset.f;
+    sec.querySelectorAll('.pj').forEach(p => {
+      const show = f === 'all' || p.dataset.c === f;
+      p.classList.toggle('hide', !show);
+      if (show) p.classList.add('in');
+    });
+  }));
+
+  const modal = document.getElementById('pjModal');
+  document.body.appendChild(modal);
+  const inner = modal.querySelector('.inner');
+  const close = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+  sec.querySelectorAll('.pj .screen').forEach(s => s.addEventListener('click', e => {
+    e.stopPropagation();
+    const c = s.cloneNode(true);
+    c.querySelector('.zoom')?.remove();
+    inner.innerHTML = '';
+    inner.appendChild(c);
+    const cap = document.createElement('p'); cap.className = 'cap'; cap.textContent = s.dataset.cap || ''; inner.appendChild(cap);
+    c.classList.add('in');
+    modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => watch(inner));
+  }));
+  modal.addEventListener('click', e => { if (e.target === modal || e.target.closest('.close')) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 </script>
 </body>
